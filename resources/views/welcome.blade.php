@@ -134,7 +134,7 @@
             <div class="container">
                 <div class="row title-section">
                     <div class="col-md-12">
-                        <h2 class="text-center">Produk dan Layanan</h2>
+                        <h2 class="text-center title-white">Produk dan Layanan</h2>
                         <p class="content-description text-center">
                             Kami menawarkan berbagai macam produk yang memenuhi standar kualitas tinggi, mulai dari sayuran segar, daging premium, bumbu dapur, hingga bahan baku khusus untuk bisnis kuliner. 
                             Semua produk kami dipilih dengan teliti, langsung dari petani atau pemasok terkemuka, untuk memastikan Anda mendapatkan bahan terbaik setiap saat.
@@ -148,57 +148,52 @@
                     @endphp
 
                     <div class="col-md-3">
-                        <div class="card" style="width: 18rem;">
+                        <div class="card layanan" style="width: 18rem;">
                             <img src="{{ $meat['urls']['regular'] ?? $defaultImage }}&w=600&h=150" 
                                 class="card-img-top" style="max-height: 200px; object-fit: cover;" 
                                 alt="gambar meat">
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                            <div class="card-body layanan-body">
+                                <h5 class="card-title">Daging Berkualitas</h5>
+                                <p class="card-text">Daging premium, higienis, dan bercita rasa terbaik.</p>
                             </div>
                         </div>
                     </div>
 
                     <div class="col-md-3">
-                        <div class="card" style="width: 18rem;">
+                        <div class="card layanan" style="width: 18rem;">
                             <img src="{{ $vegetable['urls']['regular'] ?? $defaultImage }}&w=600&h=150" 
                                 class="card-img-top" style="max-height: 200px; object-fit: cover;" 
                                 alt="gambar vegetable">
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                            <div class="card-body layanan-body">
+                                <h5 class="card-title">Sayur Mayur Segar </h5>
+                                <p class="card-text">Sayuran pilihan, segar, dan bernutrisi langsung dari petani.</p>
                             </div>
                         </div>
                     </div>
 
                     <div class="col-md-3">
-                        <div class="card" style="width: 18rem;">
+                        <div class="card layanan" style="width: 18rem;">
                             <img src="{{ $herb['urls']['regular'] ?? $defaultImage }}&w=600&h=150" 
                                 class="card-img-top" style="max-height: 200px; object-fit: cover;" 
                                 alt="gambar herb">
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                            <div class="card-body layanan-body">
+                                <h5 class="card-title">Bumbu Dapur Pilihan </h5>
+                                <p class="card-text">Rempah asli dan bumbu olahan untuk cita rasa sempurna.</p>
                             </div>
                         </div>
                     </div>
 
                     <div class="col-md-3">
-                        <div class="card" style="width: 18rem;">
+                        <div class="card layanan" style="width: 18rem;">
                             <img src="{{ $healty['urls']['regular'] ?? $defaultImage }}&w=600&h=150" 
                                 class="card-img-top" style="max-height: 200px; object-fit: cover;" 
                                 alt="gambar healthy">
-                            <div class="card-body">
-                                <h5 class="card-title">Card title</h5>
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                <a href="#" class="btn btn-primary">Go somewhere</a>
+                            <div class="card-body layanan-body">
+                                <h5 class="card-title">Produk Spesial</h5>
+                                <p class="card-text">Bahan musiman dan khusus untuk berbagai kebutuhan industri.</p>
                             </div>
                         </div>
                     </div>
-
                 </div>
             </div>
         </section>
