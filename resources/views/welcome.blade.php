@@ -21,12 +21,11 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNavDropdown">
                     <ul class="navbar-nav ms-auto">
-                        <li class="nav-item"><a class="nav-link active" href="#">About</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#">Produk</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#">Cara Pemesanan</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#">Testimoni</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#">Artikel</a></li>
-                        <li class="nav-item"><a class="nav-link" href="#">Hubungi Kami</a></li>
+                        <li class="nav-item"><a class="nav-link active" href="#about">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#produk">Produk</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#pemesanan">Cara Pemesanan</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#testimoni">Testimoni</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#article">Artikel</a></li>
                         @if (Route::has('login'))
                             @auth
                                 <li class="nav-item"><a class="nav-link" href="{{ url('/dashboard') }}">Dashboard</a></li>
