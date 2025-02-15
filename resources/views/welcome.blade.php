@@ -47,11 +47,11 @@
                     <div class="col-md-8">
                         <div id="carouselExampleFade" class="carousel slide carousel-fade">
                             <div class="carousel-inner">
-                                @foreach($images as $index => $image)
+                                <!-- @foreach($images as $index => $image)
                                     <div class="carousel-item {{ $index == 0 ? 'active' : '' }}">
                                         <img src="{{ $image['urls']['regular'] }}&w=1920&h=800" class="d-block w-100" style="max-height: 700px; object-fit: cover; alt="Gambar dari Unsplash">
                                     </div>
-                                @endforeach
+                                @endforeach -->
                             </div>
                             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
                                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -90,11 +90,11 @@
 
                 <div class="row section-content">
                     <div class="col-md-6">
-                        @if($about)
+                        <!-- @if($about)
                             <img src="{{ $about['urls']['regular'] }}&w=1920&h=800" class="d-block w-100 img-about" style="max-height: 700px; object-fit: cover;" alt="gambar suplier">
                         @else
                             <p>Gambar tidak tersedia</p>
-                        @endif
+                        @endif -->
 
                     </div>
                     <div class="col-md-6">
@@ -149,7 +149,7 @@
 
                     <div class="col-md-3">
                         <div class="card layanan" style="width: 18rem;">
-                            <img src="{{ $meat['urls']['regular'] ?? $defaultImage }}&w=600&h=150" 
+                            <!-- <img src="{{ $meat['urls']['regular'] ?? $defaultImage }}&w=600&h=150"  -->
                                 class="card-img-top" style="max-height: 200px; object-fit: cover;" 
                                 alt="gambar meat">
                             <div class="card-body layanan-body">
@@ -161,7 +161,7 @@
 
                     <div class="col-md-3">
                         <div class="card layanan" style="width: 18rem;">
-                            <img src="{{ $vegetable['urls']['regular'] ?? $defaultImage }}&w=600&h=150" 
+                            <!-- <img src="{{ $vegetable['urls']['regular'] ?? $defaultImage }}&w=600&h=150"  -->
                                 class="card-img-top" style="max-height: 200px; object-fit: cover;" 
                                 alt="gambar vegetable">
                             <div class="card-body layanan-body">
@@ -185,7 +185,7 @@
 
                     <div class="col-md-3">
                         <div class="card layanan" style="width: 18rem;">
-                            <img src="{{ $healty['urls']['regular'] ?? $defaultImage }}&w=600&h=150" 
+                            <!-- <img src="{{ $healty['urls']['regular'] ?? $defaultImage }}&w=600&h=150"  -->
                                 class="card-img-top" style="max-height: 200px; object-fit: cover;" 
                                 alt="gambar healthy">
                             <div class="card-body layanan-body">
