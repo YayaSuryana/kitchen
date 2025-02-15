@@ -225,7 +225,7 @@ body {
 
 /* Section Layanan */
 #produk{
-    padding-bottom: 25px;
+    padding-bottom: 30px;
 }
 
 .title-section {
@@ -311,5 +311,117 @@ body {
         color: black;
         padding: 15px;
     }
+    .layanan {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        /* Pusatkan card secara horizontal */
+        justify-content: center;
+        /* Pusatkan card secara vertical */
+    }
 }
 /* End Section Layanan */
+
+
+/* pemesanan */
+.order-steps {
+    max-width: 900px;
+    margin: auto;
+    text-align: center;
+    padding: 30px 15px;
+}
+
+.steps-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    position: relative;
+    padding: 20px 0;
+}
+
+.step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 23%;
+    text-align: center;
+    position: relative;
+}
+
+.step i {
+    font-size: 30px;
+    background: #ffc107;
+    color: white;
+    padding: 20px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.step p {
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+/* Garis antar langkah */
+.steps-container::before {
+    content: "";
+    position: absolute;
+    top: 45px;
+    left: 10%;
+    width: 80%;
+    height: 5px;
+    background: #ffc107;
+    z-index: -1;
+}
+
+/* Tombol WhatsApp */
+.whatsapp-btn {
+    display: inline-block;
+    background: #25d366;
+    color: white;
+    font-size: 18px;
+    padding: 12px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    margin-top: 20px;
+    transition: 0.3s;
+}
+
+.whatsapp-btn:hover {
+    background: #1ebe57;
+}
+
+/* Responsif */
+@media (max-width: 768px) {
+    .steps-container {
+        flex-direction: column;
+    }
+
+    .step {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .steps-container::before {
+        width: 5px;
+        height: 100%;
+        left: 50%;
+        top: 0;
+    }
+}
+/* end pemesanan */
+
+/* Testimoni */
+#testimoni{
+    padding-bottom: 40px;
+}
+/* End Testimoni */
+
+
+/* Article */
+#article{
+    padding-bottom: 40px;
+}
+/* End Article */
