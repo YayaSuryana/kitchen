@@ -9,7 +9,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Signika+Negative:wght@300..700&display=swap" rel="stylesheet">
-  </head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+</head>
   <body>
     <header>
         <nav class="navbar navbar-expand-lg">
@@ -47,11 +48,15 @@
                     <div class="col-md-8">
                         <div id="carouselExampleFade" class="carousel slide carousel-fade">
                             <div class="carousel-inner">
-                                <!-- @foreach($images as $index => $image)
+                                @foreach($carousels as $index => $about)
                                     <div class="carousel-item {{ $index == 0 ? 'active' : '' }}">
-                                        <img src="{{ $image['urls']['regular'] }}&w=1920&h=800" class="d-block w-100" style="max-height: 700px; object-fit: cover; alt="Gambar dari Unsplash">
+                                        <img src="{{ asset('storage/'.$about->image) }}" 
+                                            class="d-block w-100 img-fluid" 
+                                            style="max-height: 700px; object-fit: cover;" 
+                                            alt="{{ $about->title }}">
                                     </div>
-                                @endforeach -->
+                                @endforeach
+
                             </div>
                             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
                                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -90,12 +95,7 @@
 
                 <div class="row section-content">
                     <div class="col-md-6">
-                        <!-- @if($about)
-                            <img src="{{ $about['urls']['regular'] }}&w=1920&h=800" class="d-block w-100 img-about" style="max-height: 700px; object-fit: cover;" alt="gambar suplier">
-                        @else
-                            <p>Gambar tidak tersedia</p>
-                        @endif -->
-
+                        <img src="{{asset('assets/img/landing/about2.jpg')}}" class="d-block w-100 img-about" style="max-height: 700px; object-fit: cover;" alt="gambar suplier">
                     </div>
                     <div class="col-md-6">
                         <h3 class="">
@@ -143,63 +143,151 @@
                 </div>
 
                 <div class="row">
-                    @php
-                        $defaultImage = 'https://via.placeholder.com/600x150?text=No+Image';
-                    @endphp
-
-                    <div class="col-md-3">
-                        <div class="card layanan" style="width: 18rem;">
-                            <!-- <img src="{{ $meat['urls']['regular'] ?? $defaultImage }}&w=600&h=150"  -->
-                                class="card-img-top" style="max-height: 200px; object-fit: cover;" 
-                                alt="gambar meat">
-                            <div class="card-body layanan-body">
-                                <h5 class="card-title">Daging Berkualitas</h5>
-                                <p class="card-text">Daging premium, higienis, dan bercita rasa terbaik.</p>
+                    @foreach($products as $product)
+                        <div class="col-md-3 col-sm-12 mt-4 d-flex justify-content-center">
+                            <div class="card layanan" style="width: 18rem;">
+                                <img src="{{ asset('storage/' . $product->image) }}" 
+                                    class="card-img-top" style="max-height: 200px; object-fit: cover;" 
+                                    alt="gambar {{ $product->name }}">
+                                <div class="card-body layanan-body">
+                                    <h5 class="card-title">{{ $product->name }}</h5>
+                                    <p class="card-text">{{ $product->description }}</p>
+                                </div>
                             </div>
                         </div>
+
+                    @endforeach
+                </div>
+            </div>
+        </section>
+
+        <section class="pemesanan color-primary" id="pemesanan">
+            <div class="container">
+                <div class="row title-section">
+                    <div class="col-md-12">
+                        <h2 class="text-center">Cara Pemesanan</h2>
+                        <p class="content-description text-center">
+                            Pesan bahan makanan segar dengan mudah! Cukup pilih produk, konfirmasi pesanan, dan kami akan mengirimkannya langsung ke lokasi Anda.
+                        </p>
                     </div>
+                </div>
 
-                    <div class="col-md-3">
-                        <div class="card layanan" style="width: 18rem;">
-                            <!-- <img src="{{ $vegetable['urls']['regular'] ?? $defaultImage }}&w=600&h=150"  -->
-                                class="card-img-top" style="max-height: 200px; object-fit: cover;" 
-                                alt="gambar vegetable">
-                            <div class="card-body layanan-body">
-                                <h5 class="card-title">Sayur Mayur Segar </h5>
-                                <p class="card-text">Sayuran pilihan, segar, dan bernutrisi langsung dari petani.</p>
+                <div class="row">
+                    <div class="order-steps">
+                        <div class="steps-container">
+                            <div class="step">
+                                <i class="fas fa-shopping-cart"></i>
+                                <p>Pilih Produk</p>
+                            </div>
+                            <div class="step">
+                                <i class="fas fa-map-marker-alt"></i>
+                                <p>Sesuaikan Alamat</p>
+                            </div>
+                            <div class="step">
+                                <i class="fas fa-credit-card"></i>
+                                <p>Bayar</p>
+                            </div>
+                            <div class="step">
+                                <i class="fas fa-truck"></i>
+                                <p>Kirim</p>
                             </div>
                         </div>
-                    </div>
 
-                    <div class="col-md-3">
-                        <div class="card layanan" style="width: 18rem;">
-                            <img src="{{ $herb['urls']['regular'] ?? $defaultImage }}&w=600&h=150" 
-                                class="card-img-top" style="max-height: 200px; object-fit: cover;" 
-                                alt="gambar herb">
-                            <div class="card-body layanan-body">
-                                <h5 class="card-title">Bumbu Dapur Pilihan </h5>
-                                <p class="card-text">Rempah asli dan bumbu olahan untuk cita rasa sempurna.</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-3">
-                        <div class="card layanan" style="width: 18rem;">
-                            <!-- <img src="{{ $healty['urls']['regular'] ?? $defaultImage }}&w=600&h=150"  -->
-                                class="card-img-top" style="max-height: 200px; object-fit: cover;" 
-                                alt="gambar healthy">
-                            <div class="card-body layanan-body">
-                                <h5 class="card-title">Produk Spesial</h5>
-                                <p class="card-text">Bahan musiman dan khusus untuk berbagai kebutuhan industri.</p>
-                            </div>
-                        </div>
+                        <a href="https://wa.me/+6289636003290?text=Terima%20kasih%20telah%20mempercayakan%20persediaan%20bisnis%20Anda%20kepada%20kami.%0A%0AProduk%20yang%20dipesan%20:%20%0AAlamat%20Penerima%20:%20%0AMetode%20Pembayaran%20:%20%0ANo.%20Hp%20Penerima%20:%20"
+                            class="whatsapp-btn">
+                            Pesan Sekarang via WhatsApp
+                        </a>
                     </div>
                 </div>
             </div>
         </section>
-    </main>
-    <footer>
 
+        <section class="testimoni" id="testimoni">
+            <div class="container">
+                <div class="row title-section">
+                    <div class="col-md-12">
+                        <h2 class="text-right">Testimoni</h2>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+                        <div class="carousel-inner">
+                            @foreach($testimonies as $index => $testimoni)
+                            <div class="carousel-item {{ $index == 0 ? 'active' : '' }}">
+                                <div class="row align-items-center">
+                                    
+
+                                    <!-- Isi Testimoni -->
+                                    <div class="col-md-8 position-relative">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="38" height="32" fill="currentColor" class="bi bi-quote" viewBox="0 0 16 16">
+                                            <path d="M12 12a1 1 0 0 0 1-1V8.558a1 1 0 0 0-1-1h-1.388q0-.527.062-1.054.093-.558.31-.992t.559-.683q.34-.279.868-.279V3q-.868 0-1.52.372a3.3 3.3 0 0 0-1.085.992 4.9 4.9 0 0 0-.62 1.458A7.7 7.7 0 0 0 9 7.558V11a1 1 0 0 0 1 1zm-6 0a1 1 0 0 0 1-1V8.558a1 1 0 0 0-1-1H4.612q0-.527.062-1.054.094-.558.31-.992.217-.434.559-.683.34-.279.868-.279V3q-.868 0-1.52.372a3.3 3.3 0 0 0-1.085.992 4.9 4.9 0 0 0-.62 1.458A7.7 7.7 0 0 0 3 7.558V11a1 1 0 0 0 1 1z"/>
+                                        </svg>
+                                        <h3 class="text-secondary mt-4 text-right">{{ $testimoni->description }}</h3>
+                                        <hr>
+
+                                        <!-- Navigasi Carousel di Samping Nama -->
+                                        <div class="d-flex justify-content-between align-items-center">
+                                            <button class="carousel-control-prev position-static" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
+                                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                            </button>
+                                            
+                                            <h6 class="m-0">{{ $testimoni->name }}</h6>
+                                            
+                                            <button class="carousel-control-next position-static" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
+                                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <!-- Gambar Testimoni -->
+                                    <div class="col-md-4 text-center">
+                                        <img src="{{ asset('storage/' . $testimoni->image) }}" 
+                                            alt="{{ $testimoni->name }}" 
+                                            class="img-thumbnail w-100" 
+                                            style="max-height: 400px; object-fit: cover;">
+                                    </div>
+                                </div>
+                            </div>
+                            @endforeach
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+            
+        </section>
+
+        <section class="article" id="article">
+            <div class="container">
+                <div class="row title-section">
+                    <div class="col-md-12">
+                        <h2 class="text-center title-white">article</h2>
+                    </div>
+                </div>
+
+                <div class="row">
+                    @foreach($articles as $article)
+                        <div class="col-md-3 col-sm-12 mt-4 d-flex justify-content-center">
+                            <div class="card layanan" style="width: 18rem;">
+                                <img src="{{ asset('storage/' . $article->image) }}" 
+                                    class="card-img-top" style="max-height: 200px; object-fit: cover;" 
+                                    alt="gambar {{ $article->title }}">
+                                <div class="card-body layanan-body">
+                                    <h5 class="card-title">{{ $article->title }}</h5>
+                                    <a href="{{route('articles.show', $article->id)}}" class="card-text btn btn-sm btn-primary">Read More</a>
+                                </div>
+                            </div>
+                        </div>
+                    @endforeach
+                </div>
+            </div>
+            
+        </section>
+    </main>
+    
+    
+    <footer class="color-primary text-center py-3">
+        <p>&copy; 2025 Kitchen. All Rights Reserved.</p>
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
   </body>
