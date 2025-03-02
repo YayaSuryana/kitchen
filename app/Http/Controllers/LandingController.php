@@ -75,7 +75,7 @@ class LandingController extends Controller
 
         $carousels = About::where('status', 1)->latest()->get();
         $articles = Article::where('status', 1)->latest()->get();
-        $article_paginate = Article::where('status', 1)->latest()->paginate(5); // ✅ tetap tanpa get()
+        $article_paginate = Article::where('status', 1)->latest()->paginate(8); // ✅ tetap tanpa get()
         $products = Product::where('status', 1)->get();
         $testimonies = Testimoni::where('status', 1)->latest()->get();
 
@@ -90,5 +90,10 @@ class LandingController extends Controller
         $article = Article::findOrFail($id); // Pastikan artikel ditemukan
 
         return view('article', compact('article'));
+    }
+
+    public function show_articles(){
+        $article = Article::latest()->get();
+        return view('all_article', compact('article'));
     }
 }

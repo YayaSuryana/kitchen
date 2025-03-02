@@ -44,14 +44,14 @@
         <section id="home">
             <div class="carousel-container">
                 <div class="row">
-                    <div class="col-md-8">
+                    <div class="col-md-6">
                         <div id="carouselExampleFade" class="carousel slide carousel-fade">
                             <div class="carousel-inner">
                                 @foreach($carousels as $index => $about)
                                     <div class="carousel-item {{ $index == 0 ? 'active' : '' }}">
                                         <img src="{{ asset('storage/'.$about->image) }}" 
                                             class="d-block w-100 img-fluid" 
-                                            style="max-height: 700px; object-fit: cover;" 
+                                            style="max-height: 700px; object-fit: cover; border-radius: 5px;" 
                                             alt="{{ $about->title }}">
                                     </div>
                                 @endforeach
@@ -67,15 +67,15 @@
                             </button>
                         </div>
                     </div>
-                    <div class="col-md-4">
+                    <div class="col-md-6">
                         <div class="content-wrapper">
                             <h1 class="content-title">Suplai Bahan Makanan Segar dan Berkualitas untuk Bisnis Anda</h1>
                             <p class="content-description">
                                 Kami menyediakan berbagai bahan makanan berkualitas tinggi yang siap mendukung bisnis Anda, baik itu restoran, rumah sakit, atau usaha katering. Dengan komitmen untuk selalu menyuplai produk segar dan terjamin, kami memastikan keperluan dapur Anda terpenuhi dengan sempurna. Temukan solusi suplai yang tepat dan mudah hanya dengan satu klik.
                             </p>
                             <div class="button-group">
-                                <a href="#" class="btn btn-color-primary btn-lg">Pesan</a>
-                                <a href="#" class="btn btn-color-secondary btn-lg">Jelajahi Produk</a>
+                                <a href="https://wa.me/+6289636003291?text=Terima%20kasih%20telah%20mempercayakan%20persediaan%20bisnis%20Anda%20kepada%20kami.%0A%0AProduk%20yang%20dipesan%20:%20%0AAlamat%20Penerima%20:%20%0AMetode%20Pembayaran%20:%20%0ANo.%20Hp%20Penerima%20:%20" class="btn btn-color-primary btn-lg">Pesan</a>
+                                <a href="#produk" class="btn btn-color-secondary btn-lg">Jelajahi Produk</a>
                             </div>
                         </div>
                     </div>
@@ -192,7 +192,7 @@
                             </div>
                         </div>
 
-                        <a href="https://wa.me/+6289636003290?text=Terima%20kasih%20telah%20mempercayakan%20persediaan%20bisnis%20Anda%20kepada%20kami.%0A%0AProduk%20yang%20dipesan%20:%20%0AAlamat%20Penerima%20:%20%0AMetode%20Pembayaran%20:%20%0ANo.%20Hp%20Penerima%20:%20"
+                        <a href="https://wa.me/+6289636003291?text=Terima%20kasih%20telah%20mempercayakan%20persediaan%20bisnis%20Anda%20kepada%20kami.%0A%0AProduk%20yang%20dipesan%20:%20%0AAlamat%20Penerima%20:%20%0AMetode%20Pembayaran%20:%20%0ANo.%20Hp%20Penerima%20:%20"
                             class="whatsapp-btn">
                             Pesan Sekarang via WhatsApp
                         </a>
@@ -278,10 +278,18 @@
                             </div>
                         </div>
                     @endforeach
+                    <div class="col-md-12 text-center">
+                        <a href="{{route('all.articles')}}" target="_blank" class="btn btn-md btn-color-primary mt-3">
+                            Lihat Semua
+                        </a>
+                    </div>
                 </div>
             </div>
             
         </section>
+        <a href="https://wa.me/+6289636003291?text=Terima%20kasih%20telah%20mempercayakan%20persediaan%20bisnis%20Anda%20kepada%20kami.%0A%0AProduk%20yang%20dipesan%20:%20%0AAlamat%20Penerima%20:%20%0AMetode%20Pembayaran%20:%20%0ANo.%20Hp%20Penerima%20:%20" class="wa-button" target="_blank">
+            <i class="fab fa-whatsapp"></i>
+        </a>
     </main>
     
     
