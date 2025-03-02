@@ -22,6 +22,7 @@ use App\Http\Controllers\ArticleController;
 
 Route::get('/', [LandingController::class, 'index'])->name('landing');
 Route::get('/articles/{id}', [LandingController::class, 'show'])->name('articles.show');
+Route::get('/all-articles', [LandingController::class, 'show_articles'])->name('all.articles');
 
 Route::middleware(['auth'])->group(function () {
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
